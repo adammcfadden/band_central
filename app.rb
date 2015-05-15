@@ -40,3 +40,9 @@ patch '/bands/:id' do
   end
   redirect to "/bands/#{band.id}"
 end
+
+patch '/bands/:id/rename' do
+  band = Band.find(params['id'])
+  band.update(name: params['new_band_name'])
+  redirect to "/bands/#{band.id}"
+end

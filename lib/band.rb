@@ -2,7 +2,7 @@ class Band < ActiveRecord::Base
 
   has_and_belongs_to_many :venues
 
-  before_validation :capitalize_name, on: :create
+  before_save :capitalize_name
 
   private
   def capitalize_name

@@ -13,5 +13,5 @@ describe 'The venue path', type: :feature do
     click_on 'The Pavilion'
     expect(page).to_not have_content('Add a new Band')
     expect(page).to have_content('The Pavilion')
-  end
+  end  
 end
