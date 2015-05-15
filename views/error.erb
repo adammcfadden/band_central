@@ -1,7 +1,7 @@
 <h3>Looks like there were some errors:</h3>
 <br>
 <ul>
-  <% @band.errors().full_messages().each() do |message| %>
+  <% @selector.errors().full_messages().each() do |message| %>
     <li><%= message %></li>
   <% end %>
 </ul>

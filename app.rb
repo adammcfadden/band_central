@@ -9,8 +9,13 @@ get '/' do
 end
 
 post '/venues' do
-  Venue.create(name: params['venue_name'])
-  redirect to '/'
+  @venue = Venue.new(name: params['venue_name'])
+  if @venue.save()
+    redirect to '/'
+  else
+    @selector = @venue
+    erb :error
+  end
 end
 
 post '/bands' do
@@ -18,6 +23,7 @@ post '/bands' do
   if @band.save()
     redirect to '/'
   else
+    @selector = @band
     erb :error
   end
 end
@@ -57,6 +63,6 @@ delete '/bands/:id/delete' do
     band.delete
     redirect to '/'
   else
-    redirect to '/errors'
+    redirect to "/bands/#{band.id}"
   end
 end
