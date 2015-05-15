@@ -1,0 +1,26 @@
+<!-------- BANDS ------- -->
+<div class="col-md-6">
+  <h2 class="sub_head">Bands</h2>
+    <% if @bands.any? && @bands != nil %>
+    <ul>
+      <% @bands.each() do |band| %>
+      <li><%= band.name %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  <h4 class="sub_head">Add a New Band</h4>
+</div>
+
+
+<!-------- VENUES ------- -->
+<div class="col-md-6">
+  <h2 class="sub_head">Venues</h2>
+    <% if @venues.any? && @venues != nil %>
+    <ul>
+      <% @venues.each() do |venue| %>
+      <li><%= venue.name %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  <h4 class="sub_head">Add a new Venue</h4>
+</div>
