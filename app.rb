@@ -7,3 +7,13 @@ get '/' do
   @venues = Venue.all
   erb :index
 end
+
+post '/venues' do
+  Venue.create(name: params['venue_name'])
+  redirect to '/'
+end
+
+post '/bands' do
+  Band.create(name: params['band_name'])
+  redirect to '/'
+end
