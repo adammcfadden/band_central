@@ -17,3 +17,26 @@ post '/bands' do
   Band.create(name: params['band_name'])
   redirect to '/'
 end
+
+get '/bands/:id' do
+  @band = Band.find(params['id'])
+  @venues = Venue.all
+  erb :band
+end
+
+get '/venues/:id' do
+  @venue = Venue.find(params['id'])
+  @bands = Band.all
+  erb :venue
+end
+
+patch '/bands/:id' do
+  band = Band.find(params['id'])
+  if params['venue_checks'] != nil
+    venues = Venue.find(params['venue_checks'])
+    venues.each do |venue|
+      band.venues.push(venue)
+    end
+  end
+  redirect to "/bands/#{band.id}"
+end

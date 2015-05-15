@@ -3,13 +3,13 @@
   <h2 class="sub_head">Bands</h2>
     <% if @bands.any? && @bands != nil %>
       <% @bands.each() do |band| %>
-      <p><%= band.name %></p>
+      <p><a href="/bands/<%= band.id %>"><%= band.name %></a></p>
       <% end %>
     <% end %>
   <h4 class="sub_head">Add a New Band</h4>
   <div class="form-group">
   <form action="/bands" method="post">
-    <input type="text" name="band_name" id="band_name" class="form-control">
+    <input required type="text" name="band_name" id="band_name" class="form-control">
     <button type="submit" id="band_name_button" name="band_name_button" class="btn btn-danger">Add Band</button>
   </form>
   </div>
@@ -21,13 +21,13 @@
   <h2 class="sub_head">Venues</h2>
     <% if @venues.any? && @venues != nil %>
       <% @venues.each() do |venue| %>
-      <p><%= venue.name %></p>
+      <p><a href="/venues/<%= venue.id %>"><%= venue.name %></a></p>
       <% end %>
     <% end %>
   <h4 class="sub_head">Add a new Venue</h4>
   <div class="form-group">
   <form action="/venues" method="post">
-    <input type="text" name="venue_name" id="venue_name" class="form-control">
+    <input required type="text" name="venue_name" id="venue_name" class="form-control">
     <button type="submit" id="venue_name_button" name="venue_name_button" class="btn btn-danger">Add Venue</button>
   </form>
   </div>
