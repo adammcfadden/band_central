@@ -14,8 +14,12 @@ post '/venues' do
 end
 
 post '/bands' do
-  Band.create(name: params['band_name'])
-  redirect to '/'
+  @band = Band.new(name: params['band_name'])
+  if @band.save()
+    redirect to '/'
+  else
+    erb :error
+  end
 end
 
 get '/bands/:id' do
@@ -45,4 +49,14 @@ patch '/bands/:id/rename' do
   band = Band.find(params['id'])
   band.update(name: params['new_band_name'])
   redirect to "/bands/#{band.id}"
+end
+
+delete '/bands/:id/delete' do
+  band = Band.find(params['id'])
+  if band.name == params['delete_band']
+    band.delete
+    redirect to '/'
+  else
+    redirect to '/errors'
+  end
 end

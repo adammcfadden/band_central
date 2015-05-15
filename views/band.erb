@@ -27,7 +27,6 @@
             <input type="checkbox" name="venue_checks[]" id="<%= venue.id %>" value="<%= venue.id %>"> <%= venue.name %>
           </label>
         </div>
-        <br>
         <% end %>
       <% end %>
     <% end %>
@@ -40,6 +39,15 @@
   <input type="hidden" name="_method" value="patch">
     <input required type="text" name="new_band_name" id="new_band_name" class="form-control">
     <button type="submit" id="new_band_name_button" name="new_band_name_button" class="btn btn-danger">Rename Band</button>
+  </form>
+  </div>
+  <h4 class="sub_head">Delete this Band</h4>
+  <div class="form-group">
+  <form action="/bands/<%= @band.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+    <label for="delete_band">Enter the Band Name to Delete:</label>
+    <input required type="text" name="delete_band" id="delete_band" class="form-control">
+    <button type="submit" id="delete_band_button" name="delete_band_button" class="btn btn-danger">Delete Band</button>
   </form>
   </div>
 </div>

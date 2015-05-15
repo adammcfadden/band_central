@@ -1,0 +1,9 @@
+<h3>Looks like there were some errors:</h3>
+<br>
+<ul>
+  <% @band.errors().full_messages().each() do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<br>
+<h4><a href="/" >Return to Home Page</a></h4>
