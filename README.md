@@ -11,10 +11,12 @@ What can I do with Band Central?
 Coming Soon:
 - Add info to each band and venue
 
->To prepare database:
->rake db:create
->rake db:migrate
->rake db:test:prepare
+To prepare database:
+```
+rake db:create
+rake db:migrate
+rake db:test:prepare
+```
 
 Requirements:
 
