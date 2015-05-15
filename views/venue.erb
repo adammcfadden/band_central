@@ -1,1 +1,28 @@
 <h2 class="sub_head"><%= @venue.name %></h2>
+
+<!-- VENUE INFO -->
+
+<div class="col-md-9">
+  <h4 class="sub_head">Venue Info</h4>
+  <p>
+    Create seperte database to store venue info. User would be able to input band info into this field.
+  </p>
+  <p>
+    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+  </p>
+  <h4 class="sub_head">Venues</h4>
+    <% if @venue.bands.any? && @venue.bands != nil %>
+      <% @venue.bands.each() do |band| %>
+      <p><a href="/bands/<%= band.id %>"><%= band.name %></a></p>
+      <% end %>
+    <% end %>
+</div>
+
+<!-- ALTER VENUE -->
+
+<div class="col-md-3">
+  <h4 class="sub_head">Add some bands that play here</h4>
+  <p>
+    Create checkboxes to add bands to this venue
+  </p>
+</div>

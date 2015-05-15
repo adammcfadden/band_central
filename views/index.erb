@@ -15,7 +15,7 @@
     <% end %>
 </div>
 
-<!-- VENUES -->
+  <!-- VENUES -->
 
 <div class="col-md-6">
   <h2 class="sub_head">Venues</h2>
@@ -28,21 +28,23 @@
 
 <!-- FORMS -->
 
-<div class="col-md-6">
+<footer>
+  <div class="col-md-6">
   <h4 class="sub_head">Add a New Band</h4>
-  <div class="form-group">
-    <form action="/bands" method="post">
-      <input required type="text" name="band_name" id="band_name" class="form-control">
-      <button type="submit" id="band_name_button" name="band_name_button" class="btn btn-danger">Add Band</button>
-    </form>
+    <div class="form-group">
+      <form action="/bands" method="post">
+        <input required type="text" name="band_name" id="band_name" class="form-control">
+        <button type="submit" id="band_name_button" name="band_name_button" class="btn btn-danger">Add Band</button>
+      </form>
+    </div>
   </div>
-</div>
-<div class="col-md-6">
-<h4 class="sub_head">Add a new Venue</h4>
-<div class="form-group" id="footer">
-  <form action="/venues" method="post">
-    <input required type="text" name="venue_name" id="venue_name" class="form-control">
-    <button type="submit" id="venue_name_button" name="venue_name_button" class="btn btn-danger">Add Venue</button>
-  </form>
-</div>
-</div>
+  <div class="col-md-6">
+  <h4 class="sub_head">Add a new Venue</h4>
+    <div class="form-group" id="footer">
+      <form action="/venues" method="post">
+        <input required type="text" name="venue_name" id="venue_name" class="form-control">
+        <button type="submit" id="venue_name_button" name="venue_name_button" class="btn btn-danger">Add Venue</button>
+      </form>
+    </div>
+  </div>
+</footer>
